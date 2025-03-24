@@ -46,11 +46,11 @@ const CertificationsSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="block mb-2"
               >
-                <div className="w-32 h-32 rounded-full bg-white border-4 border-[#FCA311] flex items-center justify-center overflow-hidden">
+                <div className="w-32 h-32 rounded-full bg-white border-4 border-[#FCA311] flex items-center justify-center p-1 overflow-hidden">
                   <img 
                     src={cert.imageUrl} 
                     alt={cert.title} 
-                    className="w-24 h-24 object-contain"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </a>
