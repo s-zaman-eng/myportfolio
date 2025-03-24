@@ -6,22 +6,22 @@ const CertificationsSection: React.FC = () => {
   const certifications = [
     {
       title: 'CompTIA Security+',
-      imagePath: '/attached_assets/comptia-security-ce-certification.png',
+      imagePath: '/comptia-security.png',
       credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
     },
     {
       title: 'CompTIA CySA+',
-      imagePath: '/attached_assets/comptia-cysa-ce-certification.png',
+      imagePath: '/comptia-cysa.png',
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
     },
     {
       title: 'CompTIA Network+',
-      imagePath: '/attached_assets/comptia-network-ce-certification.1.png',
+      imagePath: '/comptia-network.png',
       credlyId: 'c06bfb3f-1cce-4fa3-938a-155e9c44e8c2'
     },
     {
       title: 'Google Cybersecurity',
-      imagePath: '/attached_assets/google-cybersecurity-certificate-v2.png',
+      imagePath: '/google-cybersecurity.png',
       credlyId: '91a30e25-14c8-4452-899a-7978007f14b6'
     }
   ];
@@ -39,11 +39,12 @@ const CertificationsSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
           {certifications.map((cert, index) => (
             <div key={index} className="flex flex-col items-center max-w-[220px]">
-              <div className="mb-4 rounded-full bg-white border-4 border-[#FCA311] p-2 w-40 h-40 flex items-center justify-center">
+              <div className="mb-4 rounded-full bg-white border-4 border-[#FCA311] p-1 w-40 h-40 flex items-center justify-center">
                 <img 
                   src={cert.imagePath} 
                   alt={cert.title} 
-                  className="max-w-full max-h-full"
+                  className="w-full h-full object-contain"
+                  style={{ maxWidth: "90%", maxHeight: "90%" }}
                 />
               </div>
               
