@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/button';
 const CertificationsSection: React.FC = () => {
   const certifications = [
     {
-      title: 'CompTIA Security+',
-      imagePath: '/comptia-security.png',
-      credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
-    },
-    {
       title: 'CompTIA CySA+',
       imagePath: '/comptia-cysa.png',
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
+    },
+    {
+      title: 'CompTIA Security+',
+      imagePath: '/comptia-security.png',
+      credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
     },
     {
       title: 'CompTIA Network+',
