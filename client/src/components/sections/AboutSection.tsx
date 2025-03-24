@@ -64,10 +64,10 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-16 bg-background">
+    <section id="about" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-3xl font-serif font-bold mb-12 text-primary text-center"
+          className="text-3xl font-serif font-bold mb-12 text-[#14213D] text-center"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -84,7 +84,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-serif font-bold mb-4 text-primary">Professional Summary</h3>
+            <h3 className="text-2xl font-serif font-bold mb-4 text-[#14213D]">Professional Summary</h3>
             <p className="mb-6 leading-relaxed">
               Dynamic Cybersecurity professional with expertise in threat intelligence, incident response, 
               and vulnerability management. I specialize in advanced malware analysis and cloud security, 
@@ -96,31 +96,26 @@ const AboutSection = () => {
               security and hardware-level vulnerabilities. I approach cybersecurity challenges with a blend of 
               technical depth and practical problem-solving skills.
             </p>
-            <p className="mb-6 leading-relaxed">
-              <span className="font-semibold text-accent">I am actively seeking research collaborations</span> in 
-              the fields of AI-powered threat detection, IoT security frameworks, and supply chain security. If you're 
-              interested in collaborative research opportunities, please reach out via the contact form.
-            </p>
             <p className="leading-relaxed">
               <span className="font-semibold">Authorized to work in the U.S. without sponsorship.</span>
             </p>
           </motion.div>
           
           <motion.div 
-            className="md:w-1/3 bg-secondary p-6 rounded-lg shadow-sm"
+            className="md:w-1/3 bg-[#E5E5E5] p-6 rounded-lg"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-serif font-bold mb-4 text-primary">Languages</h3>
+            <h3 className="text-xl font-serif font-bold mb-4 text-[#14213D]">Languages</h3>
             <div className="flex flex-wrap gap-2 mb-8">
-              <span className="px-3 py-1 bg-card rounded-full shadow-sm">English (Fluent)</span>
-              <span className="px-3 py-1 bg-card rounded-full shadow-sm">Bengali (Fluent)</span>
-              <span className="px-3 py-1 bg-card rounded-full shadow-sm">Japanese (Intermediate)</span>
+              <span className="px-3 py-1 bg-white rounded-full shadow-sm">English (Fluent)</span>
+              <span className="px-3 py-1 bg-white rounded-full shadow-sm">Bengali (Fluent)</span>
+              <span className="px-3 py-1 bg-white rounded-full shadow-sm">Japanese (Intermediate)</span>
             </div>
             
-            <h3 className="text-xl font-serif font-bold mb-4 text-primary">Citations</h3>
+            <h3 className="text-xl font-serif font-bold mb-4 text-[#14213D]">Citations</h3>
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm">All Time:</span>
               <span className="font-semibold">92</span>
@@ -144,7 +139,7 @@ const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-serif font-bold mb-8 text-primary">Technical Skills</h3>
+          <h3 className="text-2xl font-serif font-bold mb-8 text-[#14213D]">Technical Skills</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (

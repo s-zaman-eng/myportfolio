@@ -27,27 +27,27 @@ const CertificationBadge: React.FC<CertificationBadgeProps> = ({
       transition={{ duration: 0.3 }}
     >
       <div 
-        className={`relative mb-3 rounded-full overflow-hidden bg-white shadow-md ${credlyId ? 'cursor-pointer' : ''}`}
+        className={`relative mb-3 rounded-full overflow-hidden bg-white shadow-lg ${credlyId ? 'cursor-pointer' : ''}`}
         onClick={handleBadgeClick}
         style={{
           width: '120px',
           height: '120px',
-          boxShadow: '0 0 0 3px var(--accent)',
+          boxShadow: '0 0 0 3px #FCA311',
           padding: '3px'
         }}
       >
         <img 
           src={imageUrl} 
           alt={altText} 
-          className="w-full h-full object-contain rounded-full"
+          className="w-full h-full object-cover rounded-full"
         />
       </div>
       <div className="text-center">
-        <div className="text-sm font-medium text-foreground">
+        <div className="text-sm font-medium text-white">
           {title}
         </div>
         {credlyId && (
-          <div className="text-xs text-accent mt-1 hover:underline">
+          <div className="text-xs text-[#FCA311] mt-1">
             Verified by Credly
           </div>
         )}
