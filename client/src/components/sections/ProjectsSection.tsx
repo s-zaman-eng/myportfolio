@@ -19,7 +19,7 @@ const ProjectsSection = () => {
       title: "Malware Reverse Engineering",
       year: "2024",
       description: "Analyzed advanced malware samples (Operation Triangulation/Pegasus, DoublePulsar) in a sandboxed environment. Examined assembly code, runtime behavior, and network activity to develop mitigation strategies. Documented findings and recommended countermeasures.",
-      technologies: ["Reverse Engineering", "IDA Pro", "Ghidra", "Malware Analysis"],
+      technologies: ["Reverse Engineering", "Assembly", "Malware Analysis", "Sandboxing"],
       icon: <AlertTriangle className="h-16 w-16 text-[#FCA311]" />
     },
     {
@@ -50,14 +50,14 @@ const ProjectsSection = () => {
       title: "Bluetooth Low Energy Sniffer Device",
       year: "2022",
       description: "Designed a BLE sniffer with an nRF51822 SoC and Wireshark for packet analysis. Captured BLE communications from nearby devices and logged results for further examination. Implemented a user-friendly GUI using Qt.",
-      technologies: ["BLE", "IoT", "Wireshark", "Embedded Systems"],
+      technologies: ["BLE", "nRF51822", "Wireshark", "Qt"],
       icon: <Bluetooth className="h-16 w-16 text-[#FCA311]" />
     },
     {
       title: "MMWave Radar Development",
       year: "2022",
       description: "Created firmware and APIs for a 77 GHz radar sensor using the NXP S32R2XX 32-bit processor. Optimized sensor data processing and user interface design, improving detection accuracy in advanced sensor applications.",
-      technologies: ["Radar", "Embedded Systems", "Signal Processing", "API Development"],
+      technologies: ["Radar", "NXP S32R2XX", "Firmware", "API Development"],
       icon: <Activity className="h-16 w-16 text-[#FCA311]" />
     },
     {
