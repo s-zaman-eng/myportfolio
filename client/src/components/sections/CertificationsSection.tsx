@@ -6,22 +6,22 @@ const CertificationsSection: React.FC = () => {
   const certifications = [
     {
       title: 'CompTIA Security+',
-      imageUrl: 'attached_assets/comptia-security-ce-certification.png',
+      imageUrl: '/comptia-security-ce-certification.png',
       credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
     },
     {
       title: 'CompTIA CySA+',
-      imageUrl: 'attached_assets/comptia-cysa-ce-certification.png',
+      imageUrl: '/comptia-cysa-ce-certification.png',
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
     },
     {
       title: 'CompTIA Network+',
-      imageUrl: 'attached_assets/comptia-network-ce-certification.1.png',
+      imageUrl: '/comptia-network-ce-certification.1.png',
       credlyId: 'c06bfb3f-1cce-4fa3-938a-155e9c44e8c2'
     },
     {
       title: 'Google Cybersecurity',
-      imageUrl: 'attached_assets/google-cybersecurity-certificate-v2.png',
+      imageUrl: '/google-cybersecurity-certificate-v2.png',
       credlyId: '91a30e25-14c8-4452-899a-7978007f14b6'
     }
   ];
