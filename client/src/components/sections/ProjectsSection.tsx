@@ -1,13 +1,9 @@
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ui/project-card';
 import { Cpu, AlertTriangle, Wifi, Cloud, Database, Bluetooth, Activity, Search } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const ProjectsSection = () => {
-  const [showAllProjects, setShowAllProjects] = useState(false);
-  const [loadingMore, setLoadingMore] = useState(false);
-
-  const initialProjects = [
+  const allProjects = [
     {
       title: "AI-Based Intrusion Detection System",
       year: "2024",
@@ -35,10 +31,7 @@ const ProjectsSection = () => {
       description: "Contributed to a red team/blue team exercise focused on cloud security and IAM. Investigated misconfigurations and cyber-attacks in cloud environments, leveraging cloud-native and third-party tools. Demonstrated effective incident response in a simulated real-world scenario.",
       technologies: ["Cloud Security", "IAM", "Red Team", "Incident Response"],
       icon: <Cloud className="h-16 w-16 text-[#FCA311]" />
-    }
-  ];
-
-  const additionalProjects = [
+    },
     {
       title: "Private Blockchain Project",
       year: "2022",
@@ -68,16 +61,6 @@ const ProjectsSection = () => {
       icon: <Search className="h-16 w-16 text-[#FCA311]" />
     }
   ];
-
-  const handleLoadMore = () => {
-    setLoadingMore(true);
-    setTimeout(() => {
-      setShowAllProjects(true);
-      setLoadingMore(false);
-    }, 1000);
-  };
-
-  const projects = showAllProjects ? [...initialProjects, ...additionalProjects] : initialProjects;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -120,7 +103,7 @@ const ProjectsSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {projects.map((project, index) => (
+          {allProjects.map((project, index) => (
             <motion.div key={index} variants={itemVariants}>
               <ProjectCard
                 title={project.title}
@@ -132,24 +115,6 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </motion.div>
-        
-        {!showAllProjects && (
-          <motion.div 
-            className="mt-8 text-center"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <button 
-              onClick={handleLoadMore} 
-              className={`bg-[#14213D] text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition-all duration-300 ${loadingMore ? 'opacity-75 cursor-wait' : ''}`}
-              disabled={loadingMore}
-            >
-              {loadingMore ? 'Loading...' : 'Load More Projects'}
-            </button>
-          </motion.div>
-        )}
       </div>
     </section>
   );
