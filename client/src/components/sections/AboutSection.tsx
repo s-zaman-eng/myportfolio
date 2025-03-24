@@ -1,6 +1,5 @@
-import { Shield, Network, Server, Code, Cloud, SearchCode, Lock, FileCheck, Cpu } from 'lucide-react';
+import { Server, Code, Cloud, FileCheck, Cpu } from 'lucide-react';
 import SkillCard from '@/components/ui/skill-card';
-import CertificationCard from '@/components/ui/certification-card';
 import { motion } from 'framer-motion';
 
 const AboutSection = () => {
@@ -40,25 +39,6 @@ const AboutSection = () => {
     {
       title: "Blockchain & IoT",
       skills: "Solidity (private Ethereum networks), Raspberry Pi, Arduino"
-    }
-  ];
-
-  const certifications = [
-    {
-      title: "CompTIA Security+",
-      icon: <Shield className="h-10 w-10" />
-    },
-    {
-      title: "CompTIA Network+",
-      icon: <Network className="h-10 w-10" />
-    },
-    {
-      title: "CompTIA Cybersecurity Analyst (CySA+)",
-      icon: <SearchCode className="h-10 w-10" />
-    },
-    {
-      title: "Google Professional Cybersecurity Certificate",
-      icon: <Lock className="h-10 w-10" />
     }
   ];
 
@@ -165,25 +145,6 @@ const AboutSection = () => {
             {skills.map((skill, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <SkillCard title={skill.title} skills={skill.skills} />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-        
-        {/* Certifications Section */}
-        <motion.div 
-          className="mt-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-serif font-bold mb-8 text-[#14213D]">Certifications</h3>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <CertificationCard title={cert.title} icon={cert.icon} />
               </motion.div>
             ))}
           </div>
