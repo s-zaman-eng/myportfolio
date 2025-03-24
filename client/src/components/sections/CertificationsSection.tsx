@@ -16,7 +16,7 @@ const CertificationsSection: React.FC = () => {
     },
     {
       title: 'CompTIA Network+',
-      imagePath: '/comptia-network.png',
+      imagePath: './comptia-network.png',
       credlyId: 'c06bfb3f-1cce-4fa3-938a-155e9c44e8c2'
     },
     {
