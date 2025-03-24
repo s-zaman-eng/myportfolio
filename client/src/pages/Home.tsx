@@ -4,6 +4,7 @@ import ExperienceSection from '@/components/sections/ExperienceSection';
 import PublicationsSection from '@/components/sections/PublicationsSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import EducationSection from '@/components/sections/EducationSection';
+import CertificationsSection from '@/components/sections/CertificationsSection';
 import ContactSection from '@/components/sections/ContactSection';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <PublicationsSection />
       <ProjectsSection />
       <EducationSection />
+      <CertificationsSection />
       <ContactSection />
     </>
   );

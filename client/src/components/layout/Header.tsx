@@ -40,6 +40,7 @@ const Header = () => {
     { label: "Publications", id: "publications" },
     { label: "Projects", id: "projects" },
     { label: "Education", id: "education" },
+    { label: "Certifications", id: "certifications" },
     { label: "Contact", id: "contact" },
   ];
 
