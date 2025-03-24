@@ -96,6 +96,9 @@ const AboutSection = () => {
               security and hardware-level vulnerabilities. I approach cybersecurity challenges with a blend of 
               technical depth and practical problem-solving skills.
             </p>
+            <p className="mb-6 leading-relaxed">
+              I am actively open to research collaboration opportunities in cybersecurity, particularly in areas of IoT security, malware analysis, and emerging threat detection technologies.
+            </p>
             <p className="leading-relaxed">
               <span className="font-semibold">Authorized to work in the U.S. without sponsorship.</span>
             </p>
