@@ -70,16 +70,23 @@ const ProjectsSection = () => {
   ];
   
   const handleLoadMore = () => {
+    console.log("Load more clicked. Current state:", { showAllProjects, loadingMore });
     setLoadingMore(true);
     setTimeout(() => {
       setShowAllProjects(true);
+      console.log("Showing all projects now");
       setLoadingMore(false);
     }, 1000);
   };
 
+  console.log("Initial projects:", initialProjects.length);
+  console.log("Additional projects:", additionalProjects.length);
+  
   const projects = showAllProjects 
     ? [...initialProjects, ...additionalProjects] 
     : initialProjects;
+    
+  console.log("Projects to display:", projects.length, "showAllProjects:", showAllProjects);
 
   const containerVariants = {
     hidden: { opacity: 0 },
