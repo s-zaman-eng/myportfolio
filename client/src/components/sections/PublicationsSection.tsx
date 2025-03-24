@@ -107,9 +107,7 @@ const PublicationsSection = () => {
                   <div 
                     className="w-10 bg-[#FCA311] rounded-t transition-all duration-1000 ease-in-out" 
                     style={{ 
-                      height: citationBars ? `${(item.count / maxCitations) * 100}%` : '0%',
-                      maxHeight: '80%',
-                      minHeight: '8px'
+                      height: citationBars ? `${Math.max((item.count / maxCitations) * 160, 16)}px` : '8px'
                     }}
                   ></div>
                   <span className="text-xs mt-2">{item.year}</span>

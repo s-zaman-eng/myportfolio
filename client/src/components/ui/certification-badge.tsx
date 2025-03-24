@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Info } from 'lucide-react';
 
 interface CertificationBadgeProps {
   imageUrl: string;
@@ -28,28 +27,31 @@ const CertificationBadge: React.FC<CertificationBadgeProps> = ({
       transition={{ duration: 0.3 }}
     >
       <div 
-        className={`relative mb-2 rounded-full overflow-hidden border-2 border-[#FCA311] bg-white p-1 shadow-md ${credlyId ? 'cursor-pointer' : ''}`}
+        className={`relative mb-3 rounded-full overflow-hidden bg-white shadow-lg ${credlyId ? 'cursor-pointer' : ''}`}
         onClick={handleBadgeClick}
+        style={{
+          width: '120px',
+          height: '120px',
+          boxShadow: '0 0 0 3px #FCA311',
+          padding: '3px'
+        }}
       >
         <img 
           src={imageUrl} 
           alt={altText} 
-          className="w-24 h-24 md:w-32 md:h-32 object-contain"
+          className="w-full h-full object-cover rounded-full"
         />
+      </div>
+      <div className="text-center">
+        <div className="text-sm font-medium text-white">
+          {title}
+        </div>
         {credlyId && (
-          <div className="absolute top-0 right-0 bg-[#FCA311] rounded-full p-1 m-1" title="Click to view on Credly">
-            <Info className="h-4 w-4 text-[#14213D]" />
+          <div className="text-xs text-[#FCA311] mt-1">
+            Verified by Credly
           </div>
         )}
       </div>
-      <span className="text-center text-sm font-medium">
-        {title}
-      </span>
-      {credlyId && (
-        <span className="text-xs text-[#FCA311] mt-1">
-          Verified by Credly
-        </span>
-      )}
     </motion.div>
   );
 };
