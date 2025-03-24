@@ -39,12 +39,11 @@ const CertificationsSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
           {certifications.map((cert, index) => (
             <div key={index} className="flex flex-col items-center max-w-[220px]">
-              <div className="mb-4 rounded-full bg-white border-4 border-[#FCA311] p-1 w-40 h-40 flex items-center justify-center">
+              <div className="mb-6 w-40 h-40 flex items-center justify-center">
                 <img 
                   src={cert.imagePath} 
                   alt={cert.title} 
                   className="w-full h-full object-contain"
-                  style={{ maxWidth: "90%", maxHeight: "90%" }}
                 />
               </div>
               
