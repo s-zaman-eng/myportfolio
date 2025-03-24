@@ -6,7 +6,7 @@ const CertificationsSection: React.FC = () => {
   const certifications = [
     {
       title: 'CompTIA CySA+',
-      imagePath: './public/comptia-cysa.png',
+      imagePath: 'public/comptia-cysa.png',
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
     },
     {
