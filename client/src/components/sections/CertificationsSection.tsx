@@ -21,7 +21,7 @@ const CertificationsSection: React.FC = () => {
     },
     {
       title: 'Google Cybersecurity',
-      imagePath: 'https://raw.githubusercontent.com/s-zaman-eng/myportfolio/public/google-cybersecurity.png',
+      imagePath: 'google-cybersecurity.png',
       credlyId: '91a30e25-14c8-4452-899a-7978007f14b6'
     }
   ];
