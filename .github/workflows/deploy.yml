@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+# IMPORTANT: Before this workflow can run successfully, you must:
+# 1. Push this code to your GitHub repository
+# 2. Go to your repository settings > Pages
+# 3. Under "Source", select "GitHub Actions" from the dropdown menu
+
 on:
   push:
     branches: [ main ]
@@ -31,7 +36,13 @@ jobs:
         run: npm ci
       
       - name: Build project
-        run: npm run build
+        run: |
+          # Create a .env.production file with PUBLIC_URL
+          echo "PUBLIC_URL=https://szaman.me" > .env.production
+          # Run the build
+          npm run build
+          # Copy CNAME file to dist folder
+          cp public/CNAME dist/public/
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -39,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './dist/public'
 
   deploy:
     environment:
