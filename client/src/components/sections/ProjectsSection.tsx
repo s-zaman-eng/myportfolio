@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '@/components/ui/project-card';
 import { Cpu, AlertTriangle, Wifi, Cloud, Database, Bluetooth, Activity, Search } from 'lucide-react';
 
 const ProjectsSection = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
+  const [displayedProjects, setDisplayedProjects] = useState<any[]>([]);
 
   const initialProjects = [
     {
@@ -69,24 +70,27 @@ const ProjectsSection = () => {
     }
   ];
   
+  // Update displayed projects whenever showAllProjects changes
+  useEffect(() => {
+    if (showAllProjects) {
+      setDisplayedProjects([...initialProjects, ...additionalProjects]);
+    } else {
+      setDisplayedProjects([...initialProjects]);
+    }
+  }, [showAllProjects]);
+
+  // Initialize with initial projects
+  useEffect(() => {
+    setDisplayedProjects([...initialProjects]);
+  }, []);
+  
   const handleLoadMore = () => {
-    console.log("Load more clicked. Current state:", { showAllProjects, loadingMore });
     setLoadingMore(true);
     setTimeout(() => {
       setShowAllProjects(true);
-      console.log("Showing all projects now");
       setLoadingMore(false);
     }, 1000);
   };
-
-  console.log("Initial projects:", initialProjects.length);
-  console.log("Additional projects:", additionalProjects.length);
-  
-  const projects = showAllProjects 
-    ? [...initialProjects, ...additionalProjects] 
-    : initialProjects;
-    
-  console.log("Projects to display:", projects.length, "showAllProjects:", showAllProjects);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -126,28 +130,34 @@ const ProjectsSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
         >
-          {projects.map((project, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <ProjectCard
-                title={project.title}
-                year={project.year}
-                description={project.description}
-                technologies={project.technologies}
-                icon={project.icon}
-              />
-            </motion.div>
-          ))}
+          <AnimatePresence>
+            {displayedProjects.map((project, index) => (
+              <motion.div 
+                key={project.title}
+                variants={itemVariants}
+                initial="hidden" 
+                animate="visible"
+                exit="hidden"
+              >
+                <ProjectCard
+                  title={project.title}
+                  year={project.year}
+                  description={project.description}
+                  technologies={project.technologies}
+                  icon={project.icon}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
         
         {!showAllProjects && (
           <motion.div 
             className="mt-12 text-center"
             initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <button 
