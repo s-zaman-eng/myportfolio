@@ -49,8 +49,8 @@ const Header = () => {
       scrollActive ? "py-2" : "py-4"
     }`}>
       <nav className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/">
-          <a className="text-xl font-serif font-bold text-[#14213D]">Sums Uz Zaman</a>
+        <Link href="/" className="text-xl font-serif font-bold text-[#14213D]">
+          Sums Uz Zaman
         </Link>
         
         {/* Desktop Navigation */}
