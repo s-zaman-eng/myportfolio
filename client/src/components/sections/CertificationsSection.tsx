@@ -78,7 +78,7 @@ const CertificationsSection: React.FC = () => {
           <p className="text-[#E5E5E5] max-w-2xl mx-auto">
             View my complete certification profile on{' '}
             <a 
-              href="https://www.credly.com/users/sumsuz" 
+              href="https://www.credly.com/users/sums-uz-zaman/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-[#FCA311] hover:underline"
