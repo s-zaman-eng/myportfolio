@@ -45,11 +45,11 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full bg-white shadow-md z-50 transition-all duration-300 ${
+    <header className={`fixed w-full bg-card shadow-md z-50 transition-all duration-300 ${
       scrollActive ? "py-2" : "py-4"
     }`}>
       <nav className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-serif font-bold text-[#14213D]">
+        <Link href="/" className="text-xl font-serif font-bold text-primary">
           Sums Uz Zaman
         </Link>
         
@@ -59,7 +59,7 @@ const Header = () => {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="text-[#14213D] hover:text-[#FCA311] transition-colors duration-300"
+              className="text-primary hover:text-accent transition-colors duration-300"
             >
               {item.label}
             </button>
@@ -69,7 +69,7 @@ const Header = () => {
         {/* Mobile Navigation Toggle */}
         <button 
           onClick={toggleMenu} 
-          className="md:hidden text-[#14213D] focus:outline-none"
+          className="md:hidden text-primary focus:outline-none"
           aria-label="Toggle mobile menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,13 +77,13 @@ const Header = () => {
       </nav>
       
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white shadow-md ${isOpen ? "block" : "hidden"}`}>
+      <div className={`md:hidden bg-card shadow-md ${isOpen ? "block" : "hidden"}`}>
         <div className="container mx-auto px-4 py-2 flex flex-col space-y-3">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="text-[#14213D] hover:text-[#FCA311] py-2 transition-colors duration-300"
+              className="text-primary hover:text-accent py-2 transition-colors duration-300"
             >
               {item.label}
             </button>
