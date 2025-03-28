@@ -2,28 +2,31 @@ import React from 'react';
 import { Award, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Import certificate images with relative paths for GitHub Pages compatibility
+// With a custom domain (szaman.me), we don't need a base path prefix
+// The images should be accessible directly from the root
+
 const CertificationsSection: React.FC = () => {
-  // Define image paths that will work both locally and on GitHub Pages
+  // Define image paths for the root domain
   const certifications = [
     {
       title: 'CompTIA CySA+',
-      imagePath: './comptia-cysa.png', // Relative path that will resolve from the public folder
+      // Use absolute paths from the root for GitHub Pages with custom domain
+      imagePath: '/comptia-cysa.png', 
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
     },
     {
       title: 'CompTIA Security+',
-      imagePath: './comptia-security.png',
+      imagePath: '/comptia-security.png',
       credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
     },
     {
       title: 'CompTIA Network+',
-      imagePath: './comptia-network.png',
+      imagePath: '/comptia-network.png',
       credlyId: 'c06bfb3f-1cce-4fa3-938a-155e9c44e8c2'
     },
     {
       title: 'Google Cybersecurity',
-      imagePath: './google-cybersecurity.png',
+      imagePath: '/google-cybersecurity.png',
       credlyId: '91a30e25-14c8-4452-899a-7978007f14b6'
     }
   ];
