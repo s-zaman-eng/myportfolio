@@ -2,16 +2,18 @@ import React from 'react';
 import { Award, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Import certificate images with relative paths for GitHub Pages compatibility
 const CertificationsSection: React.FC = () => {
+  // Define image paths that will work both locally and on GitHub Pages
   const certifications = [
     {
       title: 'CompTIA CySA+',
-      imagePath: 'public/comptia-cysa.png',
+      imagePath: './comptia-cysa.png', // Relative path that will resolve from the public folder
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
     },
     {
       title: 'CompTIA Security+',
-      imagePath: '/comptia-security.png',
+      imagePath: './comptia-security.png',
       credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
     },
     {
@@ -21,7 +23,7 @@ const CertificationsSection: React.FC = () => {
     },
     {
       title: 'Google Cybersecurity',
-      imagePath: 'google-cybersecurity.png',
+      imagePath: './google-cybersecurity.png',
       credlyId: '91a30e25-14c8-4452-899a-7978007f14b6'
     }
   ];
