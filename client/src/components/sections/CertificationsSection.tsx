@@ -2,31 +2,34 @@ import React from 'react';
 import { Award, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// With a custom domain (szaman.me), we don't need a base path prefix
-// The images should be accessible directly from the root
+// Import images directly for Vite to handle properly
+// This is the most reliable way to handle assets with GitHub Pages
+import cysaImage from '@/assets/images/comptia-cysa.png';
+import securityImage from '@/assets/images/comptia-security.png';
+import networkImage from '@/assets/images/comptia-network.png';
+import googleImage from '@/assets/images/google-cybersecurity.png';
 
 const CertificationsSection: React.FC = () => {
-  // Define image paths for the root domain
+  // Use imported images directly - this works in both dev and production
   const certifications = [
     {
       title: 'CompTIA CySA+',
-      // Use absolute paths from the root for GitHub Pages with custom domain
-      imagePath: '/comptia-cysa.png', 
+      imagePath: cysaImage, 
       credlyId: '5d490d6e-c215-4bc2-b009-e1b42bd23375'
     },
     {
       title: 'CompTIA Security+',
-      imagePath: '/comptia-security.png',
+      imagePath: securityImage,
       credlyId: '8c0aebe3-fe5b-49f7-8d16-73c8fb5b3131'
     },
     {
       title: 'CompTIA Network+',
-      imagePath: '/comptia-network.png',
+      imagePath: networkImage,
       credlyId: 'c06bfb3f-1cce-4fa3-938a-155e9c44e8c2'
     },
     {
       title: 'Google Cybersecurity',
-      imagePath: '/google-cybersecurity.png',
+      imagePath: googleImage,
       credlyId: '91a30e25-14c8-4452-899a-7978007f14b6'
     }
   ];
